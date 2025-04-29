@@ -1,0 +1,38 @@
+﻿@using W.EN
+@model PersonaW;
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5>Persona</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="NombreW" class="form-label"></label>
+                <input asp-for="NombreW" class="form-control" />
+                <span asp-validation-for="NombreW" class="text-danger"></span>
+
+                <label asp-for="ApellidoW" class="form-label"></label>
+                <input asp-for="ApellidoW" class="form-control" />
+                <span asp-validation-for="ApellidoW" class="text-danger"></span>
+
+                <label asp-for="FechaNacimientoW" class="form-label"></label>
+                <input asp-for="FechaNacimientoW" class="form-control" />
+                <span asp-validation-for="FechaNacimientoW" class="text-danger"></span>
+
+                <label asp-for="SueldoW" class="form-label"></label>
+                <input asp-for="SueldoW" class="form-control" />
+                <span asp-validation-for="SueldoW" class="text-danger"></span>
+
+                <label asp-for="EstatusW" class="form-label"></label>
+                <input asp-for="EstatusW" class="form-control" />
+                <span asp-validation-for="EstatusW" class="text-danger"></span>
+
+                <label asp-for="ComentarioW" class="form-label"></label>
+                <input asp-for="ComentarioW" class="form-control" />
+                <span asp-validation-for="ComentarioW" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-success">Modificar</button>
+        </form>
+    </div>
+</div>

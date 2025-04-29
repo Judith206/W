@@ -1,0 +1,75 @@
+﻿@using W.EN
+
+@model List<PersonaW>
+<h1>Lista de Personas</h1>
+
+<!--Busqueda por nombre-->
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="row">
+        <div class="col-md-5">
+            <label class="control-label">Nombre:</label>
+            <input type="text" name="nombre" class="form-control"
+                   value="@Context.Request.Query["nombre"]"
+                   placeholder="Buscar por nombre" />
+        </div>
+        <!--Busqueda por apellido-->
+        <div class="col-md-5">
+            <label class="control-label">Apellido:</label>
+            <input type="text" name="apellido" class="form-control"
+                   value="@Context.Request.Query["apellido"]"
+                   placeholder="Buscar por apellido" />
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+
+            <button type="submit" class="btn btn-primary mr-2">Buscar</button>
+            <!--Limpiar busqueda-->
+            <a asp-action="Index" class="btn btn-outline-secondary">Limpiar</a>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-controller="PersonaW" asp-action="Create" class="btn btn-primary">Nuevo</a>
+    <br />
+    <br />
+    @if (Model != null)
+    {
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Fecha Nacimiento</td>
+                    <td>Sueldo</td>
+                    <td>Estatus</td>
+                    <td>Comentarios</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var personaw in Model)
+                {
+                    <tr>
+                        <th>@personaw.NombreW</th>
+                        <th>@personaw.ApellidoW</th>
+                        <th>@personaw.FechaNacimientoW</th>
+                        <th>@personaw.SueldoW</th>
+                        <th>@personaw.EstatusW</th>
+                        <th>@personaw.ComentarioW</th>
+                        
+                        <th>
+                            <a class="btn btn-primary" asp-controller="PersonaW" asp-action="Edit" asp-route-id="@personaw.Id">Editar</a>|
+                            <a class="btn btn-danger" asp-controller="PersonaW" asp-action="Delete" asp-route-id="@personaw.Id">Eliminar</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning mt-3">No se encontraron personas con los criterios de búsqueda</div>
+    }
+    
+</div>
+
