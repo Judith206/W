@@ -60,7 +60,7 @@ namespace W.AppWeb.Controllers
         // POST: PersonaWController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(PersonaW pPersonaW )
+        public async Task<ActionResult> Edit(PersonaW pPersonaW)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace W.AppWeb.Controllers
         }
 
         // GET: PersonaWController/Delete/5
-        public async  Task<ActionResult> Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
             var personaw = await _personawBL.ObtenerPorIdAsync(new PersonaW { Id = id });
             return View(personaw);

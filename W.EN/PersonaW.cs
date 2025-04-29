@@ -10,7 +10,7 @@ namespace W.EN
     public class PersonaW
     {
         public int Id { get; set; }
-        [Required (ErrorMessage = "El Nombre es obligatorio ")]
+        [Required(ErrorMessage = "El Nombre es obligatorio ")]
         [MaxLength(50)]
 
         public string NombreW { get; set; }
@@ -23,7 +23,6 @@ namespace W.EN
 
         public byte EstatusW { get; set; }
 
-        public string? ComentarioW  { get; set; }
+        public string? ComentarioW { get; set; }
     }
-    //bhhikan
 }

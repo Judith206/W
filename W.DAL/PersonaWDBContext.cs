@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace W.DAL
 {
-   public class PersonaWDBContext : DbContext
+    public class PersonaWDBContext : DbContext
     {
         public PersonaWDBContext(DbContextOptions<PersonaWDBContext> options) : base(options)
         {
 
         }
 
-        public DbSet<PersonaW> PersonasW { get; set; }  
+        public DbSet<PersonaW> PersonasW { get; set; }
     }
 
 

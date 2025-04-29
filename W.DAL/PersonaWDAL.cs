@@ -13,7 +13,7 @@ namespace W.DAL
         readonly PersonaWDBContext _dbContext;
         private int Id;
 
-        
+
         public PersonaWDAL(PersonaWDBContext context)
         {
             _dbContext = context;
